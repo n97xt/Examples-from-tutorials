@@ -46,8 +46,11 @@
 <script>
     function kubekKlik(evt) {
         let poziom = this.getAttribute('poziom');
-        poziom++;
-        console.log(poziom);
+        poziom += 24;
+        if(poziom <= 96){
+            this.style.backgroundPosition = "0 " + poziom + "%"
+        }
+        console.log('poziom', poziom);
     }
 
 
