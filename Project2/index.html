@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <title>Napełnianie kubków</title>
+    <style>
+        /*
+            żółty: #FFF700;
+            zielony: #299617;
+            niebieski: #5DADEC;
+            fioletowy: #9C51B6;
+            czerwony: #FF3855;
+            brązowy: #A83731;
+        */
+
+        h1 {
+        font-family: 'Lobster', cursive;    
+        text-align: center;
+        font-size: 60px;
+        transform: rotate(-10deg);
+        }
+        
+        .kubek {
+            width: 200px;
+            height: 200px;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            border-radius: 0 0 20px 20px;
+            cursor: pointer;
+            float: left;
+            margin: 20px;
+            background-size: 200% 200%;
+            background-image: linear-gradient(to top, #FFF700 50%, transparent 50%);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Napełnianie kubków</h1>
+    <div class="kubek" poziom="0"></div>
+</body>
+<script>
+    function kubekKlik(evt) {
+        let poziom = this.getAttribute('poziom');
+        poziom++;
+        console.log(poziom);
+    }
+
+
+    let kubki = document.querySelectorAll('.kubek');
+    kubki.forEach( kubek => {
+        kubek.addEventListener('click', kubekKlik)
+    })
+</script>
+</html>
