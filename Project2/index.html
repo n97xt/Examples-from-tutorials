@@ -31,26 +31,54 @@
             border-bottom: 3px solid black;
             border-radius: 0 0 20px 20px;
             cursor: pointer;
-            float: left;
             margin: 20px;
+            float: left;
             background-size: 200% 200%;
+            transition: background-position 500ms;
+        }
+
+        .zolta {
             background-image: linear-gradient(to top, #FFF700 50%, transparent 50%);
         }
+        .zielona {
+            background-image: linear-gradient(to top, #299617 50%, transparent 50%);
+        }
+        .niebieska {
+            background-image: linear-gradient(to top, #5DADEC 50%, transparent 50%);
+        }
+        .fioletowa {
+            background-image: linear-gradient(to top, #9C51B6 50%, transparent 50%);
+        }
+        .czerwona {
+            background-image: linear-gradient(to top, #FF3855 50%, transparent 50%);
+        }
+        .brazowa {
+            background-image: linear-gradient(to top, #A83731 50%, transparent 50%);
+        }
+
     </style>
 
 </head>
 <body>
     <h1>Napełnianie kubków</h1>
-    <div class="kubek" poziom="0"></div>
+    <div class="kubek zolta" poziom="0"></div>
+    <div class="kubek zielona" poziom="0"></div>
+    <div class="kubek niebieska" poziom="0"></div>
+    <div class="kubek fioletowa" poziom="0"></div>
+    <div class="kubek czerwona" poziom="0"></div>
+    <div class="kubek brazowa" poziom="0"></div>
 </body>
 <script>
     function kubekKlik(evt) {
-        let poziom = this.getAttribute('poziom');
+        let poziom = Number(this.getAttribute('poziom'));
         poziom += 24;
         if(poziom <= 96){
-            this.style.backgroundPosition = "0 " + poziom + "%"
+            this.style.backgroundPosition = "0 " + poziom + "%";
+            this.setAttribute('poziom', poziom);
+        } else {
+            this.style.cursor = "not-allowed";
         }
-        console.log('poziom', poziom);
+        
     }
 
 
