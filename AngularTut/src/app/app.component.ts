@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { OsobyService } from './osoby.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,11 @@ export class AppComponent implements OnInit, OnDestroy {
   wyswietl = false;
   osoby = [];
 
+  constructor( private osobyService:OsobyService ) {}
+
   ngOnInit(){
     console.log('komponent init');
-    this.osoby = [
-      {imie: 'Krystian', wiek: 21},
-      {imie: 'Damian', wiek: 34},
-      {imie: 'Romek', wiek: 32},
-      {imie: 'Darek', wiek: 41},
-    ]
+    this.osoby = this.osobyService.wszystkieOsoby();
   }
   ngOnDestroy() {
     console.log('komponent zniszczony');
