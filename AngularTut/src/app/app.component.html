@@ -7,9 +7,9 @@
 
     <!-- <button (click)="wyslij($event)" >Wyślij</button>-->
 
-  <button (click)="wyslij()" >Wyślij</button>
+  <button [ngStyle]="{'background-color': 'green'}"  (click)="wyslij()" >Wyślij</button>
   <br>
-  <div *ngFor="let osoba of osoby;">
-    {{osoba.imie}} ma lat {{osoba.wiek}}
+  <div *ngFor="let osoba of osoby; let i = index;">
+    <span [ngClass]="{czerwona : i == 2}">{{osoba.imie}} ma lat {{osoba.wiek}}</span>
   </div>
 </div>
