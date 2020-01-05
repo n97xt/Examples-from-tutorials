@@ -12,4 +12,6 @@
   <div *ngFor="let osoba of osoby; let i = index;">
     <span [ngClass]="{czerwona : i == 2}">{{osoba.imie}} ma lat {{osoba.wiek}}</span>
   </div>
+
+  <h2>{{ kasa | currency: 'EUR'}}</h2>
 </div>

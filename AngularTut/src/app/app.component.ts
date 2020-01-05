@@ -10,6 +10,8 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'AngularTut';
   wyswietl = false;
   osoby = [];
+  urodzony = new Date(1984, 1, 2);
+  kasa = 2.23;
 
   constructor( private osobyService:OsobyService ) {}
 
