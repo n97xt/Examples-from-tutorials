@@ -1,1 +1,14 @@
-<p>jeden works!</p>
+<p>Klikniety {{ klik }}</p>
+
+<form [formGroup]="naszForm" (ngSubmit)="wyslij()">
+    <label>Imie</label>
+    <input type="text" formControlName="imie" />
+    <br>
+    <label>Nazwisko</label>
+    <input type="text" formControlName="nazwisko">
+
+    <button type="submit">Wyslij</button>
+</form>
+
+<app-child [imie]="naszForm.value.imie" (zmieniony)="klikniety($event)">
+</app-child>
