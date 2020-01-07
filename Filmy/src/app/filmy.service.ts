@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
 
-interface Film {
-  id: Number;
-  tytul: String;
-  rok?: Number;
-  opis?: String;
-}
-
 @Injectable({
   providedIn: 'root'
 })
