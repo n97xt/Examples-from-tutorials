@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OsobyService {
+
+  naszObservable$ = new Observable( observer => {
+    observer.next();
+  });
+
   private osobyService = [
     {imie: 'Krystian', wiek: 21},
     {imie: 'Damian', wiek: 34},

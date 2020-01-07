@@ -8,4 +8,5 @@
     <span [ngClass]="{czerwona : i == 2}">{{osoba.imie}} ma lat {{osoba.wiek}}</span>
   </div>
 
-  <h2>{{ kasa | currency:'EUR'}}</h2>
+  <h2>{{ kasa | currency:'EUR'}}</h2> 
+  <h2>{{ nowyObservable$ | async }}</h2>
