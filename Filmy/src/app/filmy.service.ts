@@ -13,7 +13,7 @@ export class FilmyService {
 
   constructor() { }
 
-  wszystkieFilmy() {
+  wszystkieFilmy(): Film[] {
     return this.filmy;
   }
 }
