@@ -12,4 +12,8 @@ export class FilmyService {
   ];
 
   constructor() { }
+
+  wszystkieFilmy() {
+    return this.filmy;
+  }
 }
