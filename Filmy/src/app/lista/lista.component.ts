@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Film } from '../modele/film';
+import { FilmyService } from '../filmy.service';
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  filmy: Film[];
+
+  constructor( private fs: FilmyService ) { }
 
   ngOnInit() {
+    this.filmy = this.fs.wszystkieFilmy();
+    console.log(this.filmy);
   }
 
 }
