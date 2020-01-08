@@ -15,7 +15,7 @@ export class ListaComponent implements OnInit {
 
   ngOnInit() {
     this.filmy = this.fs.wszystkieFilmy();
-    console.log(this.filmy);
+    console.table(this.filmy);
   }
 
 }
