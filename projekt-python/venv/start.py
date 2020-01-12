@@ -1,4 +1,6 @@
 import csv
+import string
+import random
 
 osoby = []
 
@@ -13,11 +15,20 @@ def wczytaj_osoby():
         plik = open('osoby.csv', 'w')
         plik.close()
 
+def wygeneruj_haslo():
+    haslo = ''
+    chars = string.ascii_letters + string.digits
+    for char in range(10):
+        haslo += random.choice(chars)
+    return haslo
+
+
 def dodaj_osobe():
     imie = input("Podaj imie: ")
     plik = open('osoby.csv', 'a', newline='')
     csv_writer = csv.writer(plik, delimiter=",")
-    csv_writer.writerow([0, imie, "asdasda"])
+    csv_writer.writerow([len(osoby), imie, wygeneruj_haslo()])
+    print("Dodales osobe")
 
 wczytaj_osoby()
 
