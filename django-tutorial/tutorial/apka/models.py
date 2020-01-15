@@ -1,9 +1,12 @@
 from django.db import models
 
-lista = (
-    ("jeden", "test1"),
-    ("dwa", "test2"),
-)
 # Create your models here.
 class Film(models.Model):
-    tytul = models.CharField(null=True, blank=True, max_length=32, unique=True, choices=lista, default='jeden')
+    tytul = models.CharField(max_length=128)
+    opis = models.TextField(default='')
+
+    data_premiery = models.DateTimeField(null=False, blank=False)
+
+    dlugosc = models.IntegerField(default=0)
+
+    plakat = models.ImageField(upload_to="images", blank=True)
