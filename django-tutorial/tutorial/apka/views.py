@@ -1,20 +1,24 @@
 from django.http import HttpResponse
+from django.shortcuts import  render
 from django.views import View
 from .models import Film
 
 # Create your views here.
 
-class DrugaView(View):
+# class DrugaView(View):
+#
+#     filmy = Film.objects.get(id=3)
+#     print(filmy.tytul)
+#     # for film in filmy:
+#     #     print(film.tytul)
+#
+#     # tekst = f"Witam z class View Mamy filmów {len(filmy)}"
+#
+#     def get(self, request):
+#         return HttpResponse(self.tekst)
 
-    filmy = Film.objects.get(id=3)
-    print(filmy.tytul)
-    # for film in filmy:
-    #     print(film.tytul)
-
-    # tekst = f"Witam z class View Mamy filmów {len(filmy)}"
-
-    def get(self, request):
-        return HttpResponse(self.tekst)
+# def pierwsza(request):
+#     return HttpResponse("Witam w naszej apce")
 
 def pierwsza(request):
-    return HttpResponse("Witam w naszej apce")
+    return render(request, "pierwsza.html")
