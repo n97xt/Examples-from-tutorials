@@ -3,4 +3,9 @@ from .models import Film
 
 # Register your models here.
 
-admin.site.register(Film)
+@admin.register(Film)
+
+class FilmAdmin(admin.ModelAdmin):
+    list_display = ['tytul', 'dlugosc', 'data_premiery']
+    list_filter = ['data_premiery']
+    search_fields = ['tytul', 'opis']

@@ -10,3 +10,6 @@ class Film(models.Model):
     dlugosc = models.IntegerField(default=0)
 
     plakat = models.ImageField(upload_to="images", blank=True)
+
+    def __str__(self):
+        return self.tytul
