@@ -21,4 +21,5 @@ from .models import Film
 #     return HttpResponse("Witam w naszej apce")
 
 def pierwsza(request):
-    return render(request, "pierwsza.html")
+    filmy = Film.objects.all()
+    return render(request, "pierwsza.html", {"filmy": filmy})

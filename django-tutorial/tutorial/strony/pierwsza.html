@@ -6,5 +6,12 @@
 </head>
 <body>
     <h1>To jest nasz template</h1>
+
+    {% for film in filmy %}
+        {% if film.dlugosc == 90 %}
+        <h2>{{ film.tytul }}</h2>
+        {% endif %}
+    {% endfor %}
+
 </body>
 </html>
