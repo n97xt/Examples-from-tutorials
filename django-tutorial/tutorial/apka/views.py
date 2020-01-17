@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import  render
 from django.views import View
 from .models import Film
+from rest_framework import viewsets
+from .serializers import FilmSerializer
 
 # Create your views here.
 
@@ -23,3 +25,7 @@ from .models import Film
 def pierwsza(request):
     filmy = Film.objects.all()
     return render(request, "pierwsza.html", {"filmy": filmy})
+
+class FilmViewSet(viewsets.ModelViewSet):
+    serializer_class = FilmSerializer
+    queryset = Film.objects.all()
