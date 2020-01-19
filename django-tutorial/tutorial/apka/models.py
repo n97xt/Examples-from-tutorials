@@ -5,7 +5,7 @@ class Film(models.Model):
     tytul = models.CharField(max_length=128)
     opis = models.TextField(default='')
 
-    data_premiery = models.DateTimeField(null=False, blank=False)
+    data_premiery = models.DateField(null=False, blank=False)
 
     dlugosc = models.IntegerField(default=0)
 

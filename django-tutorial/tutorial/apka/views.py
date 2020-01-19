@@ -3,7 +3,7 @@ from django.shortcuts import  render
 from django.views import View
 from .models import Film
 from rest_framework import viewsets
-from .serializers import FilmSerializer
+from .serializers import FilmFullSerializer
 
 # Create your views here.
 
@@ -27,5 +27,5 @@ def pierwsza(request):
     return render(request, "pierwsza.html", {"filmy": filmy})
 
 class FilmViewSet(viewsets.ModelViewSet):
-    serializer_class = FilmSerializer
+    serializer_class = FilmFullSerializer
     queryset = Film.objects.all()
