@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class DetaleComponent implements OnInit {
 
   film: Film;
+  baseUrl = 'http://127.0.0.1:8000';
 
   constructor(
     private route: ActivatedRoute,
@@ -21,8 +22,14 @@ export class DetaleComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('id', id);
-    this.film = this.fs.getFilm(Number(id));
+    this.fs.getFilm(Number(id)).subscribe(      
+      (dane) => {
+      this.film = dane;
+    },
+      (error) => {
+      console.log(error);
+      }
+    );
   }
 
   cofnij() {

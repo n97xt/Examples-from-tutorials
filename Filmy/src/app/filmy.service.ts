@@ -16,7 +16,7 @@ export class FilmyService {
     return this.http.get('http://localhost:8000/api/filmy/');
   }
   
-  getFilm(id: number): Film {
-    return this.filmy[id];
+  getFilm(id: number): Observable<Film> {
+    return this.http.get<Film>(`http://localhost:8000/api/filmy/${id}/`);
   }
 }
