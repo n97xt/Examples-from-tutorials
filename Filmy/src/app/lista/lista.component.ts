@@ -14,7 +14,14 @@ export class ListaComponent implements OnInit {
   constructor( private fs: FilmyService ) { }
 
   ngOnInit() {
-    this.filmy = this.fs.wszystkieFilmy();
+    this.fs.wszystkieFilmy().subscribe(
+      (dane) => {
+        this.filmy = dane;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
     console.table(this.filmy);
   }
 
