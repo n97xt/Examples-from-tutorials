@@ -10,6 +10,7 @@ import { FilmyService } from '../filmy.service';
 export class ListaComponent implements OnInit {
 
   filmy: Film[];
+  wiadomosc: String = '';
 
   constructor( private fs: FilmyService ) { }
 
@@ -19,6 +20,7 @@ export class ListaComponent implements OnInit {
         this.filmy = dane;
       },
       (error) => {
+        this.wiadomosc = 'Wystapil blad. Sprobuj pozniej.';
         console.log(error);
       }
     );

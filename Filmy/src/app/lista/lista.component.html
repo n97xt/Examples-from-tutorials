@@ -1,4 +1,5 @@
-<h3>Nacisnij na film by wyswietlic detale</h3>
+<h3 *ngIf="filmy">Nacisnij na film by wyswietlic detale</h3>
+<h3>{{wiadomosc}}</h3>
 <div class="film" 
     *ngFor="let film of filmy;" routerLink="film/{{ film.id }}">
     <img src="{{ film.plakat }}" width="100" />
